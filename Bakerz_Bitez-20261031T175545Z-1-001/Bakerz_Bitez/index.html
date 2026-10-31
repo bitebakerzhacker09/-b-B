@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bakerz &amp; Bitez — Where smiles are served daily</title>
+<link rel="icon" type="image/svg+xml" href="assets/images/icon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/images/icon-192.png">
+<link rel="shortcut icon" href="assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+<meta name="theme-color" content="#2c4838">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/aesthetic.css">
+</head>
+<body data-page="index">
+<a class="skip" href="#top">Skip to content</a>
+
+<div class="bar ticker" role="region" aria-label="Today at Bakerz &amp; Bitez">
+  <div class="tclock" aria-hidden="true"><span id="tdate"></span><b id="ttime"></b></div>
+  <div class="tscroll">
+    <div class="ttrack" id="ttrack">
+      <div class="tset">
+        <span>Where smiles are served daily</span>
+        <span>Fresh gulab jamun and jalebi every afternoon</span>
+        <span>Swirl soft-serve and hand-scooped ice cream, open until closing</span>
+        <span>Cakes for every occasion: order 48 hours ahead</span>
+        <span>New: the autumn macaron collection</span>
+        <span>Winter Deals are here: warm up with us</span>
+        <span>Reserve a table in the salon below</span>
+        <span>New merch: tote bags, mugs, tees and more, all wearing our mark</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap head">
+    <button class="menubtn" id="menubtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="main" id="nav" aria-label="Homepage side navigation">
+      <a href="#top">Home</a>
+      <a href="#menu">Bakery menu</a>
+      <a href="#icecream">Ice-cream section</a>
+      <a href="#box">Macaron section</a>
+      <a href="#merch">Merchandise</a>
+      <a href="#salon">Café &amp; drinks</a>
+      <a href="#reserve">Reservation section</a>
+      <a href="#reviews">Customer reviews</a>
+      <a href="#visit">Outlets</a>
+      <a href="#faq">FAQs</a>
+    </nav>
+    <a class="logo" href="index.html" aria-label="Bakerz &amp; Bitez home">
+      <b>Bakerz &amp; Bitez</b>
+      <small>BAKERY</small>
+    </a>
+    <div class="tools">
+      <button class="locbtn" id="locbtn" type="button" aria-label="Set your location"><svg width="14" height="18" viewBox="0 0 14 18" aria-hidden="true"><path d="M7 1C3.7 1 1 3.6 1 6.9 1 11.3 7 17 7 17s6-5.7 6-10.1C13 3.6 10.3 1 7 1z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="7" r="2.2" fill="currentColor"/></svg><span id="loclabel">Set location</span></button>
+      <button class="themebtn" id="themebtn" aria-label="Switch theme">☾</button>
+      <button class="cartbtn" id="cartbtn" aria-label="Open your order">Cart (<span id="cartcount">0</span>)</button>
+    </div>
+  </div>
+<div class="subnav"><nav id="toc" aria-label="Site pages">
+      <a href="index.html" aria-current="true">Home</a>
+      <a href="html/deals.html">Deals &amp; Combos</a>
+      <a href="#winter-deals">Winter Deals</a>
+      <a href="html/menu.html">Full Menu</a>
+      <a href="html/about.html">Our Story</a>
+      <a href="html/contact.html">Contact &amp; Booking</a>
+    </nav></div>
+  <div class="progress" aria-hidden="true"><i id="prog"></i></div>
+</header>
+
+<main id="top" tabindex="-1">
+  <section class="hero" style="padding:0">
+    <div class="wrap">
+      <div>
+        <h1>Where smiles are served daily.</h1>
+        <p class="lead">Bakerz &amp; Bitez is a bakery for cakes, mithai, desserts from around the world, and ice cream swirled or scooped while you wait.</p>
+        <div class="btns">
+          <a class="btn" href="#menu">Explore the menu</a>
+          <a class="btn ghost" href="#icecream">Swirl or scoop</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="frame two"></div><div class="frame"></div>
+        <svg class="mac m3" data-c="#f1c9cf"></svg>
+        <svg class="art m1" data-art="jamun" viewBox="0 0 100 70"></svg>
+        <svg class="art m2" data-art="conemini" viewBox="0 0 100 70"></svg>
+        <svg class="art m4" data-art="cakeChoc" viewBox="0 0 100 70"></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="info" aria-label="At a glance">
+    <div class="wrap">
+      <div class="visit">
+        <div class="card">
+          <h3>Delivering to</h3>
+          <p id="infoloc">No location set yet. Add one to see delivery options.</p>
+          <p class="currency-hint" id="currencyhint" aria-live="polite">Prices display in PKR until a delivery location is selected.</p>
+          <button class="linkbtn" id="infolocbtn" type="button">Set location</button>
+        </div>
+        <div class="card">
+          <h3>Open every day</h3>
+          <p>Monday to Friday: 8am to 9pm<br>Saturday and Sunday: 9am to 10pm</p>
+        </div>
+        <div class="card">
+          <h3>Made fresh daily</h3>
+          <p>Mithai every afternoon, cakes baked to order, and ice cream swirled or scooped while you wait.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="season" aria-label="Autumn collection">
+    <div class="wrap">
+      <div class="trio" aria-hidden="true"><svg class="mac" data-c="#d99a5b"></svg><svg class="mac" data-c="#c9ad8f"></svg><svg class="mac" data-c="#b86b56"></svg></div>
+      <div>
+        <h2>The autumn collection is here</h2>
+        <p>Pumpkin spice, chestnut vanilla and fig honey. Three seasonal flavours, baked until the leaves are gone.</p>
+      </div>
+      <button class="btn" type="button" data-add='{"id":"autumn-6","name":"Autumn box of 6","detail":"2 Pumpkin spice, 2 Chestnut vanilla, 2 Fig honey","price":19.5}'>Add a box of 6 for <span data-bb-money="19.5" data-bb-currency="USD">$19.50</span></button>
+    </div>
+  </section>
+
+  <section class="winter-sec" id="winter-deals" aria-label="Winter deals">
+    <div class="wrap">
+      <div class="winter-head">
+        <span class="deal-kicker">Cosy season offers</span>
+        <h2>Winter Deals</h2>
+        <p>Warm drinks, comforting sweets and little boxes made for chilly days.</p>
+      </div>
+      <div class="winter-grid">
+      <article class="winter-card">
+        <img src="assets/images/winter deal 1.jpg" alt="Winter Warmer bakery combo" loading="lazy" >
+        <div class="winter-body">
+          <span class="winter-tag">WINTER SPECIAL</span>
+          <h3><a href="html/deals.html#deal-winter-warmer">Winter Warmer</a></h3>
+          <p>Two steaming hot chocolates with two freshly baked cookies. Perfect for a cold evening.</p>
+          <div class="winter-price"><strong data-bb-money="799" data-bb-currency="PKR">Rs. 799</strong> <del data-bb-money="950" data-bb-currency="PKR">Rs. 950</del></div>
+          <button class="btn" type="button" data-add='{"id":"deal-winter-warmer","name":"Winter Warmer","detail":"Two steaming hot chocolates with two freshly baked cookies. Perfect for a cold evening.","price":799,"currency":"PKR"}'>Add to cart</button>
+        </div>
+      </article>
+      <article class="winter-card">
+        <img src="assets/images/a-cosy-break-for-two.jpg" alt="Cosy Cake and Chai combo" loading="lazy">
+        <div class="winter-body">
+          <span class="winter-tag">COSY FOR TWO</span>
+          <h3><a href="html/deals.html#deal-winter-cake-chai">Cosy Cake &amp; Chai</a></h3>
+          <p>Two slices of cake with two cups of kahwa or karak chai.</p>
+          <div class="winter-price"><strong data-bb-money="899" data-bb-currency="PKR">Rs. 899</strong> <del data-bb-money="1100" data-bb-currency="PKR">Rs. 1,100</del></div>
+          <button class="btn" type="button" data-add='{"id":"deal-winter-cake-chai","name":"Cosy Cake &amp; Chai","detail":"Two slices of cake with two cups of kahwa or karak chai.","price":899,"currency":"PKR"}'>Add to cart</button>
+        </div>
+      </article>
+      <article class="winter-card">
+        <img src="assets/images/fresh-mithai.jpg" alt="Winter Sweet Box combo" loading="lazy">
+        <div class="winter-body">
+          <span class="winter-tag">SAVE 15%</span>
+          <h3><a href="html/deals.html#deal-winter-sweet-box">Winter Sweet Box</a></h3>
+          <p>Warm gajar halwa, gulab jamun and assorted mini treats, boxed for sharing.</p>
+          <div class="winter-price"><strong data-bb-money="1349" data-bb-currency="PKR">Rs. 1,349</strong> <del data-bb-money="1590" data-bb-currency="PKR">Rs. 1,590</del></div>
+          <button class="btn" type="button" data-add='{"id":"deal-winter-sweet-box","name":"Winter Sweet Box","detail":"Warm gajar halwa, gulab jamun and assorted mini treats, boxed for sharing.","price":1349,"currency":"PKR"}'>Add to cart</button>
+        </div>
+      </article>
+      <article class="winter-card">
+        <img src="assets/images/butter-croissant.jpg" alt="Winter Breakfast Duo combo" loading="lazy">
+        <div class="winter-body">
+          <span class="winter-tag">MORNING WARMTH</span>
+          <h3><a href="html/deals.html#deal-winter-breakfast-duo">Winter Breakfast Duo</a></h3>
+          <p>Two buttery croissants with two hot coffees to start a chilly morning.</p>
+          <div class="winter-price"><strong data-bb-money="749" data-bb-currency="PKR">Rs. 749</strong> <del data-bb-money="900" data-bb-currency="PKR">Rs. 900</del></div>
+          <button class="btn" type="button" data-add='{"id":"deal-winter-breakfast-duo","name":"Winter Breakfast Duo","detail":"Two buttery croissants with two hot coffees to start a chilly morning.","price":749,"currency":"PKR"}'>Add to cart</button>
+        </div>
+      </article>
+      </div>
+      <p class="winter-more"><a class="btn" href="html/deals.html#winter">See all winter deals</a></p>
+    </div>
+  </section>
+
+  <section class="deals-ad" id="deals-ad">
+    <div class="wrap deals-ad-inner">
+      <div><span class="deal-kicker">A little something extra</span>
+        <h2>Good things come in combos.</h2>
+        <p>Make your everyday sweeter with bakery bundles, tea-time treats and celebration boxes.</p>
+      </div>
+      <a class="btn" href="html/deals.html">Explore deals &amp; combos</a>
+    </div>
+  </section>
+
+  <section class="menu-sec" id="menu">
+    <div class="wrap">
+      <div class="title">
+        <h2>The Bakerz &amp; Bitez menu</h2>
+        <div class="orn">❦</div>
+        <p>Cakes, mithai, desserts from around the world and pastries. Pick a category, then add to your order.</p>
+      </div>
+      <div class="mtools">
+        <div class="tabs" id="tabs" role="group" aria-label="Menu categories"></div>
+        <input class="msearch" id="msearch" type="search" placeholder="Search the menu" aria-label="Search the menu">
+      </div>
+      <p class="mcount" id="mcount" role="status"></p>
+      <div class="pgrid" id="pgrid"></div>
+      <div class="home-menu-gallery" aria-label="Explore menu categories">
+        <a class="home-menu-tile" href="html/menu.html#menu-chocolate-fudge-cake"><img src="assets/images/cakes-and-bakes.jpg" alt="Chocolate cake"><span>Cakes &amp; bakes</span></a>
+        <a class="home-menu-tile" href="html/menu.html#menu-french-macarons"><img src="assets/images/macrons.jpg" alt="Colorful macarons"><span>Macarons &amp; desserts</span></a>
+        <a class="home-menu-tile" href="html/menu.html#cafe-menu"><img src="assets/images/cafe-treat.jpg" alt="Fresh coffee"><span>Café &amp; drinks</span></a>
+        <a class="home-menu-tile" href="html/deals.html"><img src="assets/images/bakerz-and-bitez-combo-deals.jpg" alt="Donuts and sweet treats"><span>Deals &amp; combos</span></a>
+      </div>
+      <p class="home-menu-cta"><a class="btn" href="html/menu.html">Explore the complete bakery &amp; café menu →</a></p>
+    </div>
+  </section>
+
+  <section class="studio" id="icecream">
+    <div class="wrap">
+      <div class="title">
+        <h2>Swirl or scoop</h2>
+        <div class="orn">❦</div>
+        <p>Soft-serve swirled to order, or hand-scooped flavours. Build yours and watch it take shape.</p>
+      </div>
+      <div class="swrap">
+        <div class="sc" id="sControls"></div>
+        <aside class="spanel" aria-live="polite">
+          <svg id="sSvg" viewBox="0 0 200 280" role="img" aria-label="Preview of your ice cream"></svg>
+          <h3 id="sName">Your ice cream</h3>
+          <p id="sDetail" style="margin:0 auto 12px;font-size:.92rem"></p>
+          <div class="row total"><span>Total</span><span id="sTotal">$0.00</span></div>
+          <button class="btn" type="button" id="sAdd" style="width:100%;margin-top:12px">Add to order</button>
+          <button class="clear" type="button" id="sClear">Start over</button>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="builder" id="box">
+    <div class="wrap">
+      <div class="title">
+        <h2>Build your box of macarons</h2>
+        <div class="orn">❦</div>
+        <p>Pick a box size, then tap flavours to fill it.</p>
+      </div>
+      <div class="bwrap">
+        <div>
+          <div class="sizes" role="group" aria-label="Box size" id="sizes"></div>
+          <div class="flavours" id="flavours"></div>
+        </div>
+        <aside class="boxpanel" aria-live="polite">
+          <h3>Your box</h3>
+          <div class="row" style="border:0;padding:0"><span id="sizeLabel">Box of 12</span><span id="fillLabel">0 of 12 chosen</span></div>
+          <div class="slots" id="slots"></div>
+          <div class="row"><span>Macarons</span><span id="unitLine">0 × $2.80</span></div>
+          <div class="row"><span>Gift ribbon</span><span>Free</span></div>
+          <div class="row total"><span>Total</span><span id="total">$0.00</span></div>
+          <button class="btn" id="addbox" disabled>Add box to order</button>
+          <button class="clear" id="clear">Clear box</button>
+          <div class="msg" id="msg"></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="merch" id="merch">
+    <div class="wrap">
+      <div class="title">
+        <h2>Bakerz &amp; Bitez merchandise</h2>
+        <div class="orn">❦</div>
+        <p>Carry the bakery with you. Every piece wears our mark, so your smile travels further.</p>
+      </div>
+      <div class="pgrid" id="mgrid"></div>
+      <div class="bulk card">
+        <div>
+          <h3>Branded gifts for your business</h3>
+          <p style="margin:0">Planning an event or an office gift? We make co-branded boxes, mugs and totes with your logo beside ours, from 20 pieces.</p>
+        </div>
+        <a class="btn ghost" href="#visit">Talk to us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="wrap">
+      <div class="plate" aria-hidden="true"><svg class="mac" data-c="#fffdf8" viewBox="0 0 100 80"></svg></div>
+      <div>
+        <h2>Sweets from every kitchen we love</h2>
+        <p>Bakerz &amp; Bitez began with one oven and a simple promise: every sweet should feel like a small celebration. We bake French pastry with real butter and Madagascan vanilla, stir our mithai the slow way with ghee and cardamom, and borrow the best desserts from every corner of the world.</p>
+        <p>Cakes are baked to order, mithai is made fresh each afternoon, and the ice cream is swirled or scooped while you wait. Where smiles are served daily is not a slogan. It is the job.</p>
+        <div class="sign">Your bakers, Bakerz &amp; Bitez</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="salon" id="salon">
+    <div class="wrap">
+      <div class="title">
+        <h2>Café and drinks</h2>
+        <div class="orn">❦</div>
+        <p>Sit down, slow down. Served from morning until closing.</p>
+      </div>
+      <div class="menu">
+        <div class="item"><div><b>Karak chai</b><small>Strong, milky and sweet, brewed to order</small></div><i></i><span data-bb-money="3" data-bb-currency="USD">$3.00</span><button class="btn salon-add" type="button" data-add='{"id":"cafe-karak-chai","name":"Karak chai","detail":"Strong, milky and sweet, brewed to order","price":3}'>Add</button></div>
+        <div class="item"><div><b>Saffron kahwa</b><small>Green tea, saffron, cardamom and almonds</small></div><i></i><span data-bb-money="3.5" data-bb-currency="USD">$3.50</span><button class="btn salon-add" type="button" data-add='{"id":"cafe-saffron-kahwa","name":"Saffron kahwa","detail":"Green tea, saffron, cardamom and almonds","price":3.5}'>Add</button></div>
+        <div class="item"><div><b>Rose bergamot tea</b><small>Our house blend, by the pot</small></div><i></i><span data-bb-money="5" data-bb-currency="USD">$5.00</span><button class="btn salon-add" type="button" data-add='{"id":"cafe-rose-bergamot","name":"Rose bergamot tea","detail":"Our house blend, by the pot","price":5}'>Add</button></div>
+        <div class="item"><div><b>Chocolat chaud</b><small>Thick, dark, with whipped cream</small></div><i></i><span data-bb-money="5.5" data-bb-currency="USD">$5.50</span><button class="btn salon-add" type="button" data-add='{"id":"cafe-chocolat-chaud","name":"Chocolat chaud","detail":"Thick, dark, with whipped cream","price":5.5}'>Add</button></div>
+        <div class="item"><div><b>Cold coffee</b><small>Espresso, milk and a scoop of vanilla</small></div><i></i><span data-bb-money="4.5" data-bb-currency="USD">$4.50</span><button class="btn salon-add" type="button" data-add='{"id":"cafe-cold-coffee","name":"Cold coffee","detail":"Espresso, milk and a scoop of vanilla","price":4.5}'>Add</button></div>
+        <div class="item"><div><b>Falooda</b><small>Rose milk, vermicelli, basil seeds and kulfi</small></div><i></i><span data-bb-money="6.5" data-bb-currency="USD">$6.50</span><button class="btn salon-add" type="button" data-add='{"id":"cafe-falooda","name":"Falooda","detail":"Rose milk, vermicelli, basil seeds and kulfi","price":6.5}'>Add</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reserve" id="reserve">
+    <div class="wrap">
+      <div class="title">
+        <h2>Reserve a table</h2>
+        <div class="orn">❦</div>
+        <p>Pick a date and time for the salon. We hold your table for 15 minutes.</p>
+      </div>
+      <div class="rwrap">
+        <form class="co card" id="rform" novalidate>
+          <label for="rn" style="margin-top:0">Name</label>
+          <input id="rn" autocomplete="name">
+          <label for="rp">Phone number</label>
+          <input id="rp" type="tel" autocomplete="tel">
+          <div class="r2">
+            <div><label for="rd">Date</label><input id="rd" type="date"></div>
+            <div><label for="rt">Time</label><select id="rt"></select></div>
+          </div>
+          <label for="rg">Guests</label>
+          <select id="rg"></select>
+          <div class="err" id="rerr" role="alert"></div>
+          <button class="btn" type="submit" style="width:100%;margin-top:10px">Reserve table</button>
+        </form>
+        <div>
+          <div class="ticket" id="ticket">
+            <div class="tmain">
+              <div class="tbrand">Bakerz &amp; Bitez</div>
+              <div class="tkind">Table reservation</div>
+              <dl>
+                <div><dt>Name</dt><dd id="tn">Your name</dd></div>
+                <div><dt>Date</dt><dd id="td">Pick a date</dd></div>
+                <div><dt>Time</dt><dd id="tt">Pick a time</dd></div>
+              </dl>
+              <div class="stamp" id="stamp" hidden>Confirmed</div>
+            </div>
+            <div class="tstub"><div><b id="tg">2</b><small>guests</small><span id="tref"></span></div></div>
+          </div>
+          <p class="rnote" id="rnote" role="status">Your ticket fills in as you type.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quotes" id="reviews">
+    <div class="wrap">
+      <div class="title">
+        <h2>Kind words</h2>
+        <div class="orn">❦</div>
+      </div>
+      <div class="qgrid">
+        <figure class="q" style="margin:0">
+          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>The pistachio macaron tasted exactly like the ones I remember from Paris. I ordered a second box before I left.</blockquote>
+          <cite>Amna, regular guest</cite>
+        </figure>
+        <figure class="q" style="margin:0">
+          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>We ordered the lemon tart for my mother's birthday. It arrived on time and disappeared in ten minutes.</blockquote>
+          <cite>Daniyal, birthday order</cite>
+        </figure>
+        <figure class="q" style="margin:0">
+          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Quiet, pretty, and the hot chocolate is the real thing. My favourite place for a slow Saturday.</blockquote>
+          <cite>Sara, salon de thé</cite>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="title">
+        <h2>Questions, answered</h2>
+        <div class="orn">❦</div>
+      </div>
+      <div class="list">
+        <details><summary>Do you deliver?</summary><p>Yes. Choose delivery at checkout. The fee is shown where available; when it needs confirmation, the bakery will confirm it with your time slot.</p></details>
+        <details><summary>How far ahead should I order a cake?</summary><p>48 hours for gâteaux and 5 days for wedding cakes. For same-day orders, call us and we will see what we can do.</p></details>
+        <details><summary>Do you have options for allergies?</summary><p>Every product is made in a kitchen that handles nuts, gluten, eggs and dairy. Please talk to us before ordering if you have an allergy.</p></details>
+        <details><summary>Can I choose the flavours in a gift box?</summary><p>Yes. Use the box builder to pick every macaron, then add a gift message at checkout.</p></details>
+        <details><summary>How long do macarons keep?</summary><p>Up to five days in the fridge. Take them out 20 minutes before eating for the best texture.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="wrap">
+      <div class="title">
+        <h2>Visit us</h2>
+        <div class="orn">❦</div>
+      </div>
+      <div class="outlet-grid">
+        <article class="card outlet-card">
+          <h3>Karachi — 5-Star Food Street</h3>
+          <p>Visit our Karachi outlet for bakery treats, macarons and ice cream.</p>
+          <a class="btn ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=5-Star+Food+Street+Karachi">Open in Google Maps ↗</a>
+        </article>
+        <article class="card outlet-card">
+          <h3>Karachi — Lucky One Mall</h3>
+          <p>Find Bakerz &amp; Bitez while shopping at Lucky One Mall.</p>
+          <a class="btn ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Lucky+One+Mall+Karachi">Open in Google Maps ↗</a>
+        </article>
+        <article class="card outlet-card">
+          <h3>Lahore — Mall of Lahore</h3>
+          <p>Drop by for fresh bakes and a sweet break in Lahore.</p>
+          <a class="btn ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Mall+of+Lahore">Open in Google Maps ↗</a>
+        </article>
+        <article class="card outlet-card">
+          <h3>Islamabad — Centaurus Mall</h3>
+          <p>Enjoy your favourite desserts at Centaurus Mall.</p>
+          <a class="btn ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Centaurus+Mall+Islamabad">Open in Google Maps ↗</a>
+        </article>
+        <article class="card outlet-card">
+          <h3>Faisalabad — The Grand Atrium Shopping Mall</h3>
+          <p>Visit our listed Faisalabad location for a bakery treat.</p>
+          <a class="btn ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=The+Grand+Atrium+Shopping+Mall+Faisalabad">Open in Google Maps ↗</a>
+        </article>
+        <article class="card outlet-card">
+          <h3>Opening hours</h3>
+          <p>Monday to Friday: 8am to 9pm</p>
+          <p>Saturday and Sunday: 9am to 10pm</p>
+          <p>Orders for cakes and events: please allow 48 hours.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="news">
+    <div class="wrap">
+      <h2>Be first to taste what's new</h2>
+      <p>One short email when a seasonal flavour arrives. No more than that.</p>
+      <form id="newsform" novalidate>
+        <input type="email" id="email" placeholder="Your email address" aria-label="Email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="ok" id="newsok" role="status"></div>
+    </div>
+  </section>
+</main>
+
+<dialog class="loc" id="locdlg" aria-labelledby="loct">
+  <div class="locin">
+    <h2 id="loct">Where should we bring the sweets?</h2>
+    <p>Use your current location to fill a readable street address, area, city and country. Coordinates are used only for address lookup and are never displayed. Your saved address stays in this browser. Prices are estimates in the selected country's currency.</p>
+    <label for="lochouse">House / building number</label>
+    <input id="lochouse" autocomplete="address-line2">
+    <label for="locstreet">Street</label>
+    <input id="locstreet" autocomplete="address-line1" required>
+    <label for="locarea">Area / neighborhood</label>
+    <input id="locarea" autocomplete="address-level3">
+    <label for="loccity">City</label>
+    <input id="loccity" autocomplete="address-level2" required>
+    <label for="loccountry">Country / region</label>
+    <input id="loccountry" autocomplete="country-name" required>
+    <div class="msg" id="locmsg" role="status"></div>
+    <div class="locrow">
+      <button class="btn" type="button" id="locsave">Save location</button>
+      <button class="btn ghost" type="button" id="locgeo">Use my current location</button>
+    </div>
+    <button class="clear" type="button" id="locskip">Skip for now</button>
+  </div>
+</dialog>
+<div class="scrim" id="scrim" data-close></div>
+<aside class="drawer" id="drawer" aria-labelledby="dtitle" aria-hidden="true">
+  <div class="dhead"><h3 id="dtitle">Your order</h3><button class="x" id="dclose" type="button" data-close aria-label="Close order">×</button></div>
+  <div class="dbody" id="dbody"></div>
+  <div class="dfoot" id="dfoot"></div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+<button class="totop" id="totop" type="button" aria-label="Back to top">↑</button>
+
+<footer>
+  <div class="wrap">
+    <div class="logo"><b>Bakerz &amp; Bitez</b><small>BAKERY</small></div>
+    <nav class="sitemap" aria-label="Site map">
+      <div><h3>Shop</h3><a href="html/menu.html">Menu</a><a href="#icecream">Swirl or scoop</a><a href="#box">Macaron box</a><a href="#merch">Merchandise</a></div>
+      <div><h3>Visit</h3><a href="#salon">Café and drinks</a><a href="#reserve">Reserve a table</a><a href="#visit">Hours and location</a></div>
+      <div><h3>About</h3><a href="html/about.html">Our story</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a></div>
+    </nav>
+    
+    <p class="footer-contact"><a href="mailto:bitebakerz96@gmail.com">Email us: bitebakerz96@gmail.com</a></p>
+    <p class="footer-contact"><a href="https://www.facebook.com/search/top?q=bakerz%20and%20bite" target="_blank" rel="noopener noreferrer" aria-label="Find Bakerz and Bite on Facebook"><svg aria-hidden="true" class="facebook-icon" viewBox="0 0 24 24" width="20" height="20" style="vertical-align:middle;margin-right:8px" focusable="false"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path d="M13.4 20v-7h2.35l.35-2.73H13.4V8.53c0-.79.22-1.33 1.36-1.33h1.45V4.76c-.25-.03-1.11-.11-2.11-.11-2.09 0-3.52 1.27-3.52 3.61v2.01H8.22V13h2.36v7z" fill="#fff"/></svg><span>Bakerz and Bite</span></a></p>
+    <p class="fine">Where smiles are served daily. © 2026 Bakerz &amp; Bitez. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/currency.js" defer></script>
+<script src="js/index.js" defer></script>
+<script src="js/aesthetic.js" defer></script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/bb-responsive.js" defer></script>
+</body>
+</html>

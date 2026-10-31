@@ -1,0 +1,33 @@
+
+:root{--mint:#cfe3d3;--mint-deep:#aecbb6;--cream:#fbf7ee;--paper:#fffdf8;--gold:#a98746;--gold-soft:#d9c08b;--forest:#2c4838;--ink:#33352f;--rose:#ecbcc4;--line:rgba(169,135,70,.35);--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:300 16px/1.7 var(--sans)}
+a{color:inherit;text-decoration:none}h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--forest);line-height:1.12;margin:0 0 12px}p{margin:0 0 1em}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}.bar{background:var(--forest);color:var(--cream);text-align:center;padding:9px 16px;font-size:.88rem;letter-spacing:.04em}
+header{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.head{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 0}.logo{text-align:center;line-height:1}.logo b{display:block;font:italic 500 2rem var(--serif);color:var(--forest)}.logo small{display:block;color:var(--gold);font-size:.7rem;letter-spacing:.3em;margin-top:5px}
+nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap}nav a{padding:5px 0;border-bottom:1px solid transparent}nav a:hover,nav a[aria-current=true]{color:var(--gold);border-color:var(--gold)}
+.btn{display:inline-block;padding:12px 25px;border:1px solid var(--forest);background:var(--forest);color:var(--cream);transition:.25s}.btn:hover{background:transparent;color:var(--forest)}
+.hero{background:var(--mint);padding:78px 0}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:center}.eyebrow{color:var(--gold);letter-spacing:.16em;text-transform:uppercase;font-size:.8rem}.hero h1{font-size:clamp(3rem,6vw,5rem);font-weight:400}.hero-art{background:var(--rose);border:1px solid var(--gold);border-radius:48% 48% 8px 8px;text-align:center;padding:50px 25px;font-size:7rem}
+section{padding:70px 0}.title{text-align:center;margin-bottom:38px}.title h2{font-size:clamp(2.2rem,4vw,3.2rem)}.title p{margin:0 auto;max-width:650px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:var(--paper);border:1px solid var(--line);padding:28px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(44,72,56,.1)}.emoji{font-size:3.3rem;margin-bottom:10px}.card h3{font-size:1.7rem}.price{font:500 1.6rem var(--serif);color:var(--forest);margin:10px 0}.tag{align-self:flex-start;background:var(--mint);color:var(--forest);padding:3px 12px;border-radius:99px;font-size:.78rem;letter-spacing:.04em}
+.adband{background:var(--mint-deep);text-align:center;padding:44px 20px}.adband h2{font-size:2.4rem}.adband p{max-width:650px;margin:0 auto 18px}
+footer{padding:38px 0;text-align:center;background:var(--paper);border-top:1px solid var(--line);font-size:.9rem}footer .footlinks{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:14px 0}
+.pagehero{padding:58px 0;background:var(--mint);text-align:center}.pagehero h1{font-size:clamp(2.6rem,5vw,4rem)}.fine{font-size:.9rem;opacity:.8}
+form{max-width:700px;margin:auto;background:var(--paper);padding:28px;border:1px solid var(--line)}label{display:block;margin:10px 0 5px}input,select,textarea{width:100%;padding:12px;border:1px solid var(--line);background:var(--cream);color:var(--ink);font:inherit}textarea{min-height:120px}
+@media(max-width:800px){.head{flex-direction:column}.hero-grid{grid-template-columns:1fr}.hero-art{font-size:5rem}.grid{grid-template-columns:repeat(2,1fr)}nav{justify-content:center;gap:13px}}
+@media(max-width:540px){.grid{grid-template-columns:1fr}.wrap{width:calc(100% - 28px)}section{padding:48px 0}.head{gap:10px}.logo b{font-size:1.7rem}}
+
+
+/* Photographic combo cards */
+.combo-photo-card{padding:0;overflow:hidden;border-radius:16px}.combo-photo{display:block;width:100%;height:210px;object-fit:cover}.combo-photo-card .tag,.combo-photo-card h3,.combo-photo-card p,.combo-photo-card .price,.combo-photo-card .btn{margin-left:24px;margin-right:24px}.combo-photo-card .tag{margin-top:18px}.combo-photo-card .btn{margin-bottom:24px;text-align:center;margin-top:auto}@media(max-width:540px){.combo-photo{height:190px}}
+
+
+/* Winter deals band */
+#winter{position:relative;background:linear-gradient(180deg,#eaf2f5,#dbe9ee);border-block:1px solid var(--line);scroll-margin-top:90px}
+#winter .tag{background:#cfe0e8;color:#24404d}
+.winter-jump{display:inline-block;margin-top:14px;padding:9px 20px;border:1px solid var(--gold);border-radius:999px;color:var(--forest);font-size:.92rem}
+.winter-jump:hover{background:var(--paper)}
+:root[data-theme="dark"] #winter{background:linear-gradient(180deg,#1b282d,#162126)}
+:root[data-theme="dark"] #winter .tag{background:#2f4852;color:#d5e8f0}
+
+/* deep links from the home page land below the sticky header */
+[id^="menu-"],[id^="deal-"],#winter,#food-menu,#cafe-menu{scroll-margin-top:110px}

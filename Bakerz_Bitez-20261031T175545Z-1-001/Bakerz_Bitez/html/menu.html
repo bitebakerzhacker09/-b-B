@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu & Café | Bakerz &amp; Bitez</title>
+<link rel="icon" type="image/svg+xml" href="../assets/images/icon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/images/icon-192.png">
+<link rel="shortcut icon" href="../assets/images/favicon.ico">
+<link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+<meta name="theme-color" content="#2c4838">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/menu.css">
+  <link rel="stylesheet" href="../css/aesthetic.css">
+<style>
+.shared-ticker{display:flex;align-items:center}
+.shared-ticker .tclock{flex:none;display:flex;align-items:center;gap:8px;padding:0 16px;white-space:nowrap;font-size:.8rem;letter-spacing:.06em;border-right:1px solid rgba(255,255,255,.35)}
+.shared-ticker .tclock::before{content:"";width:14px;height:14px;flex:none;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9a24d' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7v5l3 2'/%3E%3C/svg%3E")}
+.shared-ticker .tscroll{flex:1;min-width:0}
+</style>
+</head>
+
+<body data-page="menu">
+  <div class="bar ticker shared-ticker" role="region" aria-label="Today at Bakerz &amp; Bitez">
+    <div class="tclock" aria-hidden="true"><span id="tdate"></span><b id="ttime"></b></div>
+  <div class="tscroll">
+      <div class="ttrack">
+        <div class="tset">
+          <span>Browse cakes, bakes, mithai and café favourites</span><span>Fresh pastries, made for a sweet
+            pause</span><span>Choose a treat and add it to your cart</span><span>Classic chai, coffee and cool
+            drinks</span><span>Find your next favourite in the full menu</span><span>Menu prices shown in your selected
+            currency</span>
+          <span>Browse cakes, bakes, mithai and café favourites</span><span>Fresh pastries, made for a sweet
+            pause</span><span>Choose a treat and add it to your cart</span><span>Classic chai, coffee and cool
+            drinks</span><span>Find your next favourite in the full menu</span><span>Menu prices shown in your selected
+            currency</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header>
+    <div class="wrap head"><button class="bb-mobile-toggle" type="button" aria-expanded="false" aria-controls="bb-main-nav" aria-label="Toggle navigation"><span aria-hidden="true">☰</span> <span class="bb-toggle-label">Menu</span></button><a class="logo" href="../index.html"><b>Bakerz &amp; Bitez</b><small>BAKERY &amp;
+          CAFÉ</small></a>
+      <nav id="bb-main-nav" class="bb-main-nav" aria-label="Main navigation"><a href="../index.html">Home</a><a href="deals.html">Deals &amp; Combos</a><a
+          href="menu.html" aria-current="true">Menu</a><a href="about.html">Our Story</a><a
+          href="contact.html">Contact</a></nav><a class="catalog-cart" data-catalog-cart
+        href="../index.html?cart=open">Cart (<span data-cart-count>0</span>)</a>
+    </div>
+  </header>
+  <main>
+    <section class="pagehero menu-hero">
+      <div class="container"><span class="eyebrow">Fresh from our kitchen</span>
+        <h1>Good things, on the menu</h1>
+        <p>From buttery bakes and indulgent desserts to café classics, find your next favourite.</p><a class="btn mt-2"
+          href="#food-menu">Explore the menu</a> <a class="btn mt-2" href="../index.html#menu">See the menu on our home page</a>
+      </div>
+    </section>
+    <section class="allergy-notice" aria-label="Food allergy notice"><div class="container"><strong><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Food allergy notice</strong><p>Ingredient and allergen details are general guides and may vary by recipe, flavour, supplier or preparation. Products may be prepared in shared kitchens where cross-contact can occur. If you have an allergy or intolerance, please speak to our team before ordering. We cannot guarantee any item is completely allergen-free.</p></div></section>
+    <section class="menu-tools pt-4 pb-3">
+      <div class="container">
+        <div class="row g-3 align-items-center">
+          <div class="col-12 col-lg-5"><label class="visually-hidden" for="menuSearch">Search menu</label>
+            <div class="menu-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input
+                id="menuSearch" class="form-control" type="search" placeholder="Search cakes, coffee, chai..."
+                aria-label="Search menu items"></div>
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="filter-row" role="group" aria-label="Filter menu category"><button class="filter-btn active"
+                data-filter="all">All items</button><button class="filter-btn"
+                data-filter="bakery">Bakery</button><button class="filter-btn"
+                data-filter="dessert">Desserts</button><button class="filter-btn" data-filter="cafe">Café
+                menu</button><button class="filter-btn" data-filter="drinks">Drinks</button></div>
+          </div>
+        </div>
+        <p class="results-count mt-3 mb-0" id="resultsCount" aria-live="polite">Showing all menu favourites</p>
+      </div>
+    </section>
+    <section id="food-menu" class="pt-4">
+      <div class="container">
+        <div class="title"><span class="eyebrow">Baked with love</span>
+          <h2>Bakery &amp; dessert menu</h2>
+          <p>Little treats, big smiles. Choose an item to start your order.</p>
+        </div>
+        <div class="row g-4 menu-grid">
+          <div class="col-12 col-sm-6 col-lg-4 menu-item" data-category="bakery"
+            data-name="chocolate fudge cake cake chocolate dessert" id="menu-chocolate-fudge-cake">
+            <article class="menu-card h-100"><img loading="lazy" class="img-fluid" src="../assets/images/cakes-and-bakes.jpg" alt="Chocolate layer cake">
+              <div class="menu-card-body"><span class="menu-label">Bakery favourite</span>
+                <h3>Chocolate Fudge Cake</h3>
+                <p>Rich chocolate layers with silky fudge frosting.</p><details class="menu-allergens"><summary>Ingredients &amp; allergy information</summary><p><strong>Ingredients:</strong> Wheat flour, cocoa powder, sugar, eggs, butter, milk/cream and chocolate.</p><p><strong>Allergens:</strong> Contains: wheat (gluten), eggs, milk and soy (if present in chocolate).</p></details>
+                <div class="menu-card-bottom"><strong>Rs. 650 <small>/ slice</small></strong><button class="order-btn"
+                    type="button" data-cart-id="menu-chocolate-fudge-cake" data-cart-price="650"
+                    data-cart-currency="PKR">Add to cart <i class="fa-solid fa-cart-plus"
+                      aria-hidden="true"></i></button></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 menu-item" data-category="bakery"
+            data-name="butter croissant pastry bakery breakfast" id="menu-butter-croissant">
+            <article class="menu-card h-100"><img loading="lazy" class="img-fluid" src="../assets/images/butter-croissant.jpg"
+                alt="Golden flaky croissants">
+              <div class="menu-card-body"><span class="menu-label">Freshly baked</span>
+                <h3>Butter Croissant</h3>
+                <p>Flaky, golden layers with a buttery finish.</p><details class="menu-allergens"><summary>Ingredients &amp; allergy information</summary><p><strong>Ingredients:</strong> Wheat flour, butter, milk, yeast, sugar, salt and water.</p><p><strong>Allergens:</strong> Contains: wheat (gluten) and milk. May contain eggs.</p></details>
+                <div class="menu-card-bottom"><strong>Rs. 280</strong><button class="order-btn" type="button"
+                    data-cart-id="menu-butter-croissant" data-cart-price="280" data-cart-currency="PKR">Add to cart <i
+                      class="fa-solid fa-cart-plus" aria-hidden="true"></i></button></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 menu-item" data-category="dessert"
+            data-name="donuts doughnut sprinkles dessert sweet" id="menu-assorted-donuts">
+            <article class="menu-card h-100"><img loading="lazy" class="img-fluid" src="../assets/images/assorted-donut.jpg" alt="Colourful glazed donuts">
+              <div class="menu-card-body"><span class="menu-label">A little colourful</span>
+                <h3>Assorted Donuts</h3>
+                <p>Soft donuts with playful glazes and toppings.</p><details class="menu-allergens"><summary>Ingredients &amp; allergy information</summary><p><strong>Ingredients:</strong> Wheat flour, sugar, yeast, milk, eggs, butter, frying oil and assorted glaze/toppings.</p><p><strong>Allergens:</strong> Contains: wheat (gluten), milk and eggs. Some toppings may contain soy or nuts.</p></details>
+                <div class="menu-card-bottom"><strong>Rs. 220 <small>/ each</small></strong><button class="order-btn"
+                    type="button" data-cart-id="menu-assorted-donuts" data-cart-price="220" data-cart-currency="PKR">Add
+                    to cart <i class="fa-solid fa-cart-plus" aria-hidden="true"></i></button></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 menu-item" data-category="dessert"
+            data-name="ice cream gelato scoop dessert vanilla chocolate" id="menu-hand-scooped-ice-cream">
+            <article class="menu-card h-100"><img loading="lazy" class="img-fluid" src="../assets/images/ice-cream-scoops.jpg"
+                alt="Vanilla and chocolate ice cream scoops with chocolate sauce and nuts">
+              <div class="menu-card-body"><span class="menu-label">Cool &amp; creamy</span>
+                <h3>Hand-scooped Ice Cream</h3>
+                <p>Choose creamy classics and seasonal flavours.</p><details class="menu-allergens"><summary>Ingredients &amp; allergy information</summary><p><strong>Ingredients:</strong> Milk, cream, sugar and flavour ingredients; exact ingredients depend on the selected flavour.</p><p><strong>Allergens:</strong> Usually contains: milk. Some flavours may contain eggs, soy, peanuts or tree nuts. Check the flavour label.</p></details>
+                <div class="menu-card-bottom"><strong>Rs. 350 <small>/ scoop</small></strong><button class="order-btn"
+                    type="button" data-cart-id="menu-hand-scooped-ice-cream" data-cart-price="350"
+                    data-cart-currency="PKR">Add to cart <i class="fa-solid fa-cart-plus"
+                      aria-hidden="true"></i></button></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 menu-item" data-category="dessert"
+            data-name="macarons macaron french dessert almond" id="menu-french-macarons">
+            <article class="menu-card h-100"><img loading="lazy" class="img-fluid" src="../assets/images/macrons.jpg" alt="Pastel French macarons">
+              <div class="menu-card-body"><span class="menu-label">Delicate &amp; delightful</span>
+                <h3>French Macarons</h3>
+                <p>Pastel almond shells with smooth, sweet fillings.</p><details class="menu-allergens"><summary>Ingredients &amp; allergy information</summary><p><strong>Ingredients:</strong> Almond flour, egg whites, sugar and filling (often buttercream, ganache or fruit).</p><p><strong>Allergens:</strong> Contains: almonds (tree nuts) and eggs. Fillings may contain milk and soy.</p></details>
+                <div class="menu-card-bottom"><strong>Rs. 300 <small>/ pair</small></strong><button class="order-btn"
+                    type="button" data-cart-id="menu-french-macarons" data-cart-price="300" data-cart-currency="PKR">Add
+                    to cart <i class="fa-solid fa-cart-plus" aria-hidden="true"></i></button></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 menu-item" data-category="bakery"
+            data-name="mithai gulab jamun jalebi traditional sweets" id="menu-fresh-mithai">
+            <article class="menu-card h-100"><img loading="lazy" class="img-fluid" src="../assets/images/fresh-mithai.jpg"
+                alt="Traditional South Asian sweets">
+              <div class="menu-card-body"><span class="menu-label">Traditional favourite</span>
+                <h3>Fresh Mithai</h3>
+                <p>Classic sweet-shop favourites with fragrant cardamom.</p><details class="menu-allergens"><summary>Ingredients &amp; allergy information</summary><p><strong>Ingredients:</strong> Milk solids/khoya, sugar, ghee, cardamom and optional nuts, depending on the variety.</p><p><strong>Allergens:</strong> Usually contains: milk. Some varieties contain almonds, pistachios or other nuts.</p></details>
+                <div class="menu-card-bottom"><strong>From Rs. 900 <small>/ box</small></strong><button
+                    class="order-btn" type="button" data-cart-id="menu-fresh-mithai" data-cart-price="900"
+                    data-cart-currency="PKR">Add to cart <i class="fa-solid fa-cart-plus"
+                      aria-hidden="true"></i></button></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cafe-section" id="cafe-menu">
+      <div class="container">
+        <div class="title"><span class="eyebrow">Take a little pause</span>
+          <h2>The café menu</h2>
+          <p>Freshly prepared sips and comfort-food favourites, perfect with something sweet.</p>
+        </div>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-12 col-lg-5">
+            <div class="cafe-feature h-100"><img loading="lazy" class="img-fluid" src="../assets/images/cafe-treat.jpg"
+                alt="Cosy café counter with coffee">
+              <div class="cafe-feature-caption"><span>Made for slow mornings</span>
+                <h3>Your favourite corner café</h3>
+                <p>Pair a warm drink with a freshly baked treat.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="cafe-list">
+              <div class="cafe-item" data-category="cafe drinks" data-name="espresso coffee" id="menu-espresso">
+                <div class="cafe-thumb"><img loading="lazy" class="img-fluid" src="../assets/images/espresso.jpg" alt="Freshly brewed espresso in a small cup"></div>
+                <div class="cafe-desc">
+                  <h3>Espresso</h3>
+                  <p>A bold, smooth shot of freshly brewed coffee.</p><details class="menu-allergens"><summary>Ingredients &amp; allergy information</summary><p><strong>Ingredients:</strong> Ground coffee beans and water.</p><p><strong>Allergens:</strong> No major allergens are expected in plain espresso. Ask staff about shared equipment and add-ons.</p></details>
+                </div><strong>Rs. 250</strong><button aria-label="Add Espresso to cart" class="mini-order" type="button"
+                  data-cart-id="menu-espresso" data-cart-price="250" data-cart-currency="PKR">+</button>
+              </div>
+              <div class="cafe-item" data-category="cafe drinks" data-name="cappuccino coffee milk foam" id="menu-cappuccino">
+                <div class="cafe-thumb"><img loading="lazy" class="img-fluid" src="../assets/images/cappuccino.jpg" alt="Cappuccino with foam"></div>
+                <div class="cafe-desc">
+                  <h3>Cappuccino</h3>
+                  <p>Espresso topped with steamed milk and velvety foam.</p><details class="menu-allergens"><summary>Ingredients &amp; allergy information</summary><p><strong>Ingredients:</strong> Espresso, steamed milk and milk foam.</p><p><strong>Allergens:</strong> Contains: milk. Plant-based milk substitutions may have different allergens.</p></details>
+                </div><strong>Rs. 380</strong><button aria-label="Add Cappuccino to cart" class="mini-order"
+                  type="button" data-cart-id="menu-cappuccino" data-cart-price="380" data-cart-currency="PKR">+</button>
+              </div>
+              <div class="cafe-item" data-category="cafe drinks" data-name="iced latte cold coffee" id="menu-iced-latte">
+                <div class="cafe-thumb"><img loading="lazy" class="img-fluid" src="../assets/images/iced-latte.jpg"
+                    alt="Iced latte in a glass"></div>
+                <div class="cafe-desc">
+                  <h3>Iced Latte</h3>
+                  <p>Chilled espresso and milk over ice.</p><details class="menu-allergens"><summary>Ingredients &amp; allergy information</summary><p><strong>Ingredients:</strong> Espresso, chilled milk and ice.</p><p><strong>Allergens:</strong> Contains: milk. Plant-based milk substitutions may have different allergens.</p></details>
+                </div><strong>Rs. 420</strong><button aria-label="Add Iced Latte to cart" class="mini-order"
+                  type="button" data-cart-id="menu-iced-latte" data-cart-price="420" data-cart-currency="PKR">+</button>
+              </div>
+              <div class="cafe-item" data-category="cafe drinks" data-name="karak chai tea milk tea" id="menu-karak-chai">
+                <div class="cafe-thumb"><img loading="lazy" class="img-fluid" src="../assets/images/karak-chai.jpg"
+                    alt="Warm tea in a cup"></div>
+                <div class="cafe-desc">
+                  <h3>Karak Chai</h3>
+                  <p>Strong, milky and sweet, brewed to order.</p><details class="menu-allergens"><summary>Ingredients &amp; allergy information</summary><p><strong>Ingredients:</strong> Black tea, milk, water, sugar and spices such as cardamom.</p><p><strong>Allergens:</strong> Contains: milk.</p></details>
+                </div><strong>Rs. 250</strong><button aria-label="Add Karak Chai to cart" class="mini-order"
+                  type="button" data-cart-id="menu-karak-chai" data-cart-price="250" data-cart-currency="PKR">+</button>
+              </div>
+              <div class="cafe-item" data-category="cafe" data-name="grilled cheese sandwich lunch snack" id="menu-grilled-cheese-sandwich">
+                <div class="cafe-thumb"><img loading="lazy" class="img-fluid" src="../assets/images/grilled-cheese-sandwich.jpg"
+                    alt="Toasted sandwich"></div>
+                <div class="cafe-desc">
+                  <h3>Grilled Cheese Sandwich</h3>
+                  <p>Golden toasted bread with a warm, cheesy centre.</p><details class="menu-allergens"><summary>Ingredients &amp; allergy information</summary><p><strong>Ingredients:</strong> Bread, cheese, butter and optional seasoning.</p><p><strong>Allergens:</strong> Contains: wheat (gluten) and milk. Bread may also contain soy, sesame or other ingredients.</p></details>
+                </div><strong>Rs. 550</strong><button aria-label="Add Grilled Cheese Sandwich to cart"
+                  class="mini-order" type="button" data-cart-id="menu-grilled-cheese-sandwich" data-cart-price="550"
+                  data-cart-currency="PKR">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container pb-4">
+      <div id="noResults" class="no-results d-none">No menu items found. Try another search or category.</div>
+    </div>
+    <section class="combo-callout">
+      <div class="container">
+        <div><span class="eyebrow">Better together</span>
+          <h2>Make it a sweet little combo</h2>
+          <p>Pair a favourite bake with your café drink and make the moment extra special.</p>
+        </div><a class="btn" href="deals.html">Explore deals &amp; combos</a>
+      </div>
+    </section>
+  
+</main>
+  <footer>
+    <div class="wrap">
+      <div class="logo"><b>Bakerz &amp; Bitez</b><small>BAKERY &amp; CAFÉ</small></div>
+      <div class="footlinks"><a href="../index.html">Home</a><a href="deals.html">Deals &amp; Combos</a><a
+          href="menu.html">Menu</a><a href="about.html">Our Story</a><a href="contact.html">Contact</a></div>
+      
+    <p class="footer-contact"><a href="mailto:bitebakerz96@gmail.com">Email us: bitebakerz96@gmail.com</a></p>
+    <p class="footer-contact"><a href="https://www.facebook.com/search/top?q=bakerz%20and%20bite" target="_blank" rel="noopener noreferrer" aria-label="Find Bakerz and Bite on Facebook"><svg aria-hidden="true" class="facebook-icon" viewBox="0 0 24 24" width="20" height="20" style="vertical-align:middle;margin-right:8px" focusable="false"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path d="M13.4 20v-7h2.35l.35-2.73H13.4V8.53c0-.79.22-1.33 1.36-1.33h1.45V4.76c-.25-.03-1.11-.11-2.11-.11-2.09 0-3.52 1.27-3.52 3.61v2.01H8.22V13h2.36v7z" fill="#fff"/></svg><span>Bakerz and Bite</span></a></p>
+    <p class="fine">Menu and prices shown are sample website content and may change.</p>© 2026 Bakerz &amp; Bitez
+    </div>
+  </footer>
+  <div class="menu-toast" id="menuToast" role="status" aria-live="polite">Opening order details…</div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/currency.js" defer></script>
+  <script src="../js/menu.js" defer></script>
+  <script src="../js/catalog-cart.js" defer></script>
+  <script src="../js/aesthetic.js" defer></script>
+<script>
+(function(){function t(){var n=new Date(),d=document.getElementById("tdate"),m=document.getElementById("ttime");
+if(d)d.textContent=n.toLocaleDateString(undefined,{weekday:"short",day:"numeric",month:"short"});
+if(m)m.textContent=n.toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"});}
+t();setInterval(t,1000);})();
+</script>
+
+<script src="../js/bb-responsive.js" defer></script>
+</body>
+
+</html>
